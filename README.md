@@ -22,7 +22,7 @@ This will, however, work with the Chrome extension. It’s made for the extensio
 ## Games
 ### [Click Here to Access Surviv.io](https://eternityworktogether.github.io/survivio.html "Surviv.io Unblocked!")
 ### [Click Here to Access Agar.io](https://eternityworktogether.github.io/agar.html "Agar.io Unblocked!")
-### [Click Here to Access coolmathgames.com](eternityworktogether.github.io/coolmathgames.html "coolmathgames Unblocked!")
+### [Click Here to Access coolmathgames](eternityworktogether.github.io/coolmathgames.html "coolmathgames Unblocked!")
 ### [Click Here to Access Shell Shockers](eternityworktogether.github.io/shellshockers.html "Shell Shockers Unblocked!")
 ### [Click Here to Access Bonk.io](https://eternityworktogether.github.io/bonk.html "Bonk.io Unblocked!")
 ### [Click Here to Access OurWorld](https://eternityworktogether.github.io/ourworld.html "OurWorld Unblocked!")
