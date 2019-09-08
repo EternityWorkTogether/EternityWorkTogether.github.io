@@ -1,131 +1,57 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Yapp Proxy demo using jQuery UI dialog and iframe</title>
-    <meta name="Description" content=""/>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="favicon/manifest.json">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <meta name="msapplication-config" content="favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <!--[if IE]>
-    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link href="css/style.css" rel="stylesheet"/>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css" rel="stylesheet"/>
-    <script>
-
-     function parseQuery(queryString) {
-         var query = {};
-         var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-         for (var i = 0; i < pairs.length; i++) {
-             var pair = pairs[i].split('=');
-             query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-         }
-         return query;
-     }
-     
-     $(function() {
-         $('.clear_cookies').click(function() {
-             $.get('./', {action: 'clear_cookies'});
-         });
-         var query = parseQuery(location.search);
-         var home = 'https://duckduckgo.com/';
-         var $dialog = $('<div><div class="box"><div class="toolbar"><input/></div><iframe src="./?__proxy_url='+ (query.url || home) +'"></iframe></div></div>').
-        appendTo('body').dialog({
-            width: 800,
-            height: 600
-        });
-    var $toolbar = $dialog.find('.toolbar');
-    var $ul = $('<ul/>').prependTo($toolbar);
-    var $back = $('<li><button class="back">Back</button></li>').appendTo($ul).find('button');
-    var $forward = $('<li><button class="forward">Forward</button></li>').appendTo($ul).find('button');
-    var $refresh = $('<li><button class="refresh">refresh</button></li>').appendTo($ul).find('button');
-    window.index = 0;
-    var last_index = 0;
-    window.proxy_history = [];
-    var push = true;
-    function toggle_buttons() {
-        $back.toggleClass('disabled', index == 0);
-        $forward.toggleClass('disabled', index == proxy_history.length-1);
-    }
-    toggle_buttons();
-    $ul.on('click', 'button', function(e) {
-        var name = $(this).attr('class').replace(/\s*disabled\s*/, '');
-        if (name == 'refresh') {
-            iframe[0].setAttribute('src', iframe[0].contentWindow.location.href);
-        } else {
-            if (name == 'back') {
-                index && index--;
-            } else if (name == 'forward') {
-                index < proxy_history.length-1 && index++;
-            }
-            push = false;
-            if (proxy_history[index]) {
-                open(proxy_history[index]);
-            }
-            toggle_buttons();
-        }
-    });
-    var iframe = $dialog.find('iframe');
-    function open(url) {
-        if (!url.match(/^http/)) {
-            if (url.match(/^\/\//)) {
-                url = 'http:' + url;
-            } else {
-                url = home + '?q=' + url;
-            }
-        }
-        input.val(url);
-        iframe[0].setAttribute('src', './?__proxy_url=base64:' + btoa(url));
-    }
-    var input = $dialog.find('input').val(query.url || home).keypress(function(e) {
-        if (e.which == 13) {
-            push = true;
-            open(input.val());
-        }
-    });
-    window.onmessage = function(e) {
-        try {
-            var data = JSON.parse(e.data);
-            if (data.__proxy) {
-                var url = data.__proxy.url;
-                input.val(url);
-                if (push) {
-                    if (data.__proxy.replace) {
-                        proxy_history[index] = url;
-                    } else {
-                        if (index != proxy_history.length - 1) {
-                            proxy_history = proxy_history.slice(0, index+1);
-                        }
-                        if (data.__proxy.url != proxy_history[index]) {
-                            proxy_history.push(url);
-                            index = proxy_history.length-1;
-                        }
-                    }
-                } else {
-                    push = true;
-                }
-                //console.log(proxy_history.slice());
-                if (data.__proxy.title) {
-                    $dialog.dialog('option', 'title', data.__proxy.title);
-                }
-                toggle_buttons();
-            }
-        } catch(e) {}
-    };
-    
-});
-    </script>
-</head>
-<body>
-    <a href="https://github.com/jcubic/yapp" style="position: fixed; top: 0; left: 0; z-index:1000"><img style="border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork Yapp Proxy on GitHub"></a>
-    <button class="button clear_cookies">clear cookies</button>
-</body>
+<html class="full-height" lang="en-US">
+  <head>
+    <title>Titanium Network</title>
+    <link rel="icon" href="./img/logo.png">
+    <meta charset="UTF-8">
+    <meta name="description" content="TitaniumNetwork creates the highest quality open-source web proxies. We also have an extensive arcade and are community-driven.">
+    <meta name="keywords" content="proxy,titanium,network,bypass,games,youtube,unblocked">
+    <meta name="author" content="Titanium Network">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/transitions.css" rel="stylesheet">
+    <link href="./css/primary.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <!--<script src="./js/mdb.min.js"></script>-->
+  </head>
+  <body id="top">
+<!-- Navbar-->
+      <nav class="navbar white-text navbar-expand-lg navbar-dark fixed-top" id="navbar">
+        <div class="container"><a class="navbar-brand" href="index.html"><strong>TitaniumPhoenix</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link waves-effect waves-light" href="./selection3.html">Games</a></li>
+              <li class="nav-item"><a class="nav-link waves-effect waves-light" href="./selection2.html">Watch Movies/TV</a></li>
+              <li class="nav-item"><a class="nav-link waves-effect waves-light" href="./contributors.html">Staff & Contributors</a></li></ul>
+            <a class="btn btn-primary btn-rounded my-0 waves-effect waves-light" href="https://github.com/titaniumnetwork-dev" target="_blank">Check us out on Github!</a>
+          </div>
+        </div>
+      </nav>
+      <header>
+        <section class="animated fadeIn view hm-gradient intro" id="intro">
+        <div class="full-bg-img d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class "wow white-text" style="visibility:visible">
+                <h2 class="h2-responsive font-bold mt-sm-2">Titanium Network</h2>
+                <h3 class="h3-responsive font-bold mt-sm-3">MOTD of 08/11/2019: The forums have returned under a new domain and are being monitored again!</h3>
+                <div class="h6">With TitaniumNetwork's services, you can browse the internet freely without restriction and you do not have to worry about your school/work/company being able to see your activities!</div>
+                <div class="h6">With absolutely no user data being stored on our end & our use of 128-bit SSL and TLS, your communications are completely secure!</div>
+                <div class="h6">Our Games section has an amazing selection of both Flash and HTML-based games!</div>
+                <div class="h6">If you need to contact any staff about any concerns or suggestions, <a href="contact.html"><font color="white">click here.</font></a></div>
+                <h6 class="h6">Use the navigation below to select your destination!</h6>
+              </div>
+              <div class="wow" style="visibility: visible;">
+                <a class="btn btn-outline-white waves-effect waves-light" href="selection.html">Surf Freely</a>
+                <a class="btn btn-outline-white waves-effect waves-light" href="bookmarklets.html">Bookmarklets</a>
+                <a class="btn btn-outline-white waves-effect waves-light" href="https://donorbox.org/titaniumnetwork">Support TitaniumNetwork</a>
+                <a class="btn btn-outline-white waves-effect waves-light" href="forum.html">Community Forum</a>
+                <a class="btn btn-outline-white waves-effect waves-light" href="talk.html">Use our Chatbox</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+  </body>
 </html>
