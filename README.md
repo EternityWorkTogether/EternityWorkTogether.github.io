@@ -20,13 +20,13 @@ This will, however, work with the Chrome extension. It’s made for the extensio
 ### [Click Here to Access Bing](https://randomblock1.github.io/unblock-survivio/bing.html "Note: you can’t click links")
 
 ## Games
-### [Click Here to Access Surviv.io](https://randomblock1.github.io/unblock-survivio/survivio.html "Surviv.io Unblocked!")
-### [Click Here to Access Agar.io](https://randomblock1.github.io/unblock-survivio/agar.html "Agar.io Unblocked!")
-### [Click Here to Access coolmathgames.com](https://randomblock1.github.io/unblock-survivio/coolmathgames.html "coolmathgames Unblocked!")
-### [Click Here to Access Shell Shockers](https://randomblock1.github.io/unblock-survivio/shellshockers.html "Shell Shockers Unblocked!")
-### [Click Here to Access Bonk.io](https://randomblock1.github.io/unblock-survivio/bonk.html "Bonk.io Unblocked!")
-### [Click Here to Access OurWorld](https://randomblock1.github.io/unblock-survivio/ourworld.html "OurWorld Unblocked!")
-### [Click Here to Access Diep.io](https://randomblock1.github.io/unblock-survivio/diep.html "Diep.io Unblocked!")
+### [Click Here to Access Surviv.io](https://eternityworktogether.github.io/survivio.html "Surviv.io Unblocked!")
+### [Click Here to Access Agar.io](https://eternityworktogether.github.io/agar.html "Agar.io Unblocked!")
+### [Click Here to Access coolmathgames.com](eternityworktogether.github.io/coolmathgames.html "coolmathgames Unblocked!")
+### [Click Here to Access Shell Shockers](eternityworktogether.github.io/shellshockers.html "Shell Shockers Unblocked!")
+### [Click Here to Access Bonk.io](https://eternityworktogether.github.io/bonk.html "Bonk.io Unblocked!")
+### [Click Here to Access OurWorld](https://eternityworktogether.github.io/ourworld.html "OurWorld Unblocked!")
+### [Click Here to Access Diep.io](https://eternityworktogether.github.io/diep.html "Diep.io Unblocked!")
 <br><br><br><br><br><br><br><br>
 
 Powered by [Randomblock1’s GitHub repo](https://github.com/Randomblock1/unblock-survivio) and made with ❤️
